@@ -2,15 +2,33 @@ backend:
   name: git-gateway
   branch: main
 
+# Ensure these folders exist in your GitHub (even if empty)
 media_folder: "assets/images"
 public_folder: "/assets/images"
 
 collections:
+  - name: "builds"
+    label: "Class Builds"
+    folder: "content/builds"
+    create: true
+    # The 'r.slice' error often happens because 'identifier_field' is missing 
+    # or the slug can't be generated.
+    identifier_field: title 
+    slug: "{{title}}"
+    extension: "html"
+    format: "frontmatter"
+    fields:
+      - { label: "Class Name", name: "title", widget: "string" }
+      - { label: "Build Details", name: "body", widget: "code", default_language: "html", output_code_only: false }
+
   - name: "guides"
-    label: "Guides"
+    label: "General Guides"
     folder: "content/guides"
     create: true
+    identifier_field: title
+    slug: "{{title}}"
+    extension: "html"
+    format: "frontmatter"
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Class", name: "class", widget: "select", options: ["SinX", "Professor"] }
-      - { label: "Build Content (HTML)", name: "body", widget: "code", default_language: "html" }
+      - { label: "Guide Title", name: "title", widget: "string" }
+      - { label: "Guide Content", name: "body", widget: "code", default_language: "html", output_code_only: false }

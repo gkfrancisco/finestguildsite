@@ -1,143 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Finest · Ragnarok</title>
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    /* --- THEME CORE --- */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      background: #0b0e14;
-      background-image: radial-gradient(circle at 20% 10%, #1e2a32 1px, transparent 1px), radial-gradient(circle at 80% 60%, #2a1e2e 1px, transparent 1px);
-      background-size: 60px 60px, 90px 90px;
-      font-family: 'Inter', sans-serif;
-      color: #e0e4e9;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-    .site-container { max-width: 1200px; margin: 0 auto; padding: 1.5rem; width: 100%; flex: 1; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finest · Ragnarok Archives</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* --- RAGNAROK DARK UI --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #0b0e14;
+            background-image: radial-gradient(circle at 20% 10%, #1e2a32 1px, transparent 1px), radial-gradient(circle at 80% 60%, #2a1e2e 1px, transparent 1px);
+            background-size: 60px 60px, 90px 90px;
+            font-family: 'Inter', sans-serif;
+            color: #e0e4e9;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
 
-    /* --- NAVIGATION --- */
-    .main-header {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0.8rem 2rem; margin-bottom: 2rem; background: rgba(8, 10, 15, 0.8);
-      backdrop-filter: blur(10px); border-radius: 50px;
-      border: 1px solid rgba(200, 160, 80, 0.2);
-    }
-    .site-title { font-family: 'Cinzel Decorative', cursive; font-size: 2rem; color: #f5e6d3; text-shadow: 0 0 10px #b87c3a; text-decoration: none; }
-    .nav-list { display: flex; list-style: none; gap: 1.5rem; align-items: center; }
-    .nav-link { 
-      background: none; border: none; color: #cfc3b0; font-size: 1rem; font-weight: 600;
-      cursor: pointer; font-family: inherit; transition: 0.2s; padding: 5px 0; border-bottom: 2px solid transparent;
-    }
-    .nav-link:hover { color: #f7d9a0; border-bottom-color: #c99a4b; }
+        .site-container { max-width: 1100px; margin: 0 auto; padding: 2rem; }
 
-    /* --- DROPDOWN --- */
-    .dropdown { position: relative; }
-    .dropdown-menu {
-      position: absolute; top: 100%; left: 0; background: #1a1e26;
-      border: 1px solid #5e4a34; border-radius: 12px; padding: 0.5rem 0; min-width: 160px;
-      display: none; list-style: none; z-index: 100;
-    }
-    .dropdown:hover .dropdown-menu { display: block; }
-    .dropdown-item {
-      width: 100%; padding: 0.7rem 1.2rem; background: none; border: none;
-      color: #d9cdb0; text-align: left; cursor: pointer; font-family: inherit;
-    }
-    .dropdown-item:hover { background: rgba(200, 140, 50, 0.2); color: #fff; }
+        /* --- NAVIGATION --- */
+        .main-header {
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 0.8rem 2.5rem; margin-bottom: 2.5rem; background: rgba(12, 15, 21, 0.9);
+            backdrop-filter: blur(10px); border-radius: 50px;
+            border: 1px solid rgba(200, 160, 80, 0.25);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+        }
 
-    /* --- CONTENT --- */
-    .content-card {
-      background: rgba(18, 22, 28, 0.9); border: 1px solid #4f3d2b;
-      border-radius: 2rem; padding: 2.5rem; min-height: 400px;
-    }
-    .page-title { font-family: 'Cinzel Decorative', cursive; font-size: 2.2rem; color: #ecd59b; margin-bottom: 1rem; border-left: 5px solid #b3823e; padding-left: 1rem; }
-    
-    /* --- COMPONENTS --- */
-    .tabs-container { display: flex; gap: 10px; margin-bottom: 20px; border-bottom: 1px solid #4a3a2c; padding-bottom: 10px; }
-    .tab-btn { background: #1a1e26; border: 1px solid #5e4a34; color: #c4b69c; padding: 8px 16px; border-radius: 20px; cursor: pointer; }
-    .tab-btn.active { background: #b3823e; color: #000; font-weight: bold; }
-    #admin-btn { display: none; color: #ffae00; border: 1px solid #ffae00; padding: 5px 12px; border-radius: 15px; text-decoration: none; font-size: 0.8rem; }
-  </style>
+        .site-title { 
+            font-family: 'Cinzel Decorative', cursive; font-size: 2.2rem; 
+            color: #f5e6d3; text-shadow: 0 0 15px #b87c3a; 
+            text-decoration: none; cursor: pointer; 
+        }
+
+        .nav-list { display: flex; list-style: none; gap: 2rem; align-items: center; }
+        .nav-link { 
+            background: none; border: none; color: #cfc3b0; font-size: 1rem; 
+            font-weight: 600; cursor: pointer; font-family: inherit; transition: 0.3s;
+            text-transform: uppercase; letter-spacing: 1px;
+        }
+        .nav-link:hover { color: #f7d9a0; text-shadow: 0 0 10px #cf8b3c; }
+
+        /* --- DROPDOWN --- */
+        .dropdown { position: relative; }
+        .dropdown-menu {
+            position: absolute; top: 150%; left: 0; background: #161a21;
+            border: 1px solid #5e4a34; border-radius: 15px; padding: 0.8rem 0; min-width: 200px;
+            display: none; list-style: none; z-index: 100;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.8);
+        }
+        .dropdown:hover .dropdown-menu { display: block; animation: fadeIn 0.2s ease; }
+        .dropdown-item {
+            width: 100%; padding: 0.8rem 1.5rem; background: none; border: none;
+            color: #d9cdb0; text-align: left; cursor: pointer; font-family: inherit;
+        }
+        .dropdown-item:hover { background: rgba(180, 130, 50, 0.2); color: #fff; }
+
+        /* --- CONTENT CARD --- */
+        .content-card {
+            background: rgba(18, 22, 28, 0.85); border: 1px solid #4f3d2b;
+            border-radius: 2.5rem; padding: 3.5rem; min-height: 550px;
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.03);
+            position: relative;
+        }
+
+        /* Styling for the HTML you will paste later */
+        .dynamic-html-content h1 { 
+            font-family: 'Cinzel Decorative', cursive; color: #ecd59b; 
+            margin-bottom: 2rem; border-left: 6px solid #b3823e; padding-left: 20px; 
+        }
+        .dynamic-html-content p { margin-bottom: 1.2rem; line-height: 1.8; color: #c2b9a6; font-size: 1.1rem; }
+
+        .loading-overlay {
+            color: #b3823e; font-family: 'Cinzel Decorative'; font-size: 1.2rem;
+            text-align: center; margin-top: 5rem; display: none;
+        }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
 </head>
 <body>
-  <div class="site-container">
-    <header class="main-header">
-      <a href="#" class="site-title" onclick="navigate('home')">FINEST</a>
-      <nav>
-        <ul class="nav-list">
-          <li><button class="nav-link" onclick="navigate('home')">Home</button></li>
-          <li class="dropdown">
+
+    <div class="site-container">
+        <header class="main-header">
+            <div class="site-title" onclick="route('home')">FINEST</div>
+            <nav>
+    <ul class="nav-list">
+        <li><button class="nav-link" onclick="route('home')">Home</button></li>
+        
+        <li class="dropdown">
             <button class="nav-link">Builds ▼</button>
             <ul class="dropdown-menu">
-              <li><button class="dropdown-item" onclick="navigate('sinx')">🗡️ SinX</button></li>
-              <li><button class="dropdown-item" onclick="navigate('professor')">📖 Professor</button></li>
+                <li><button class="dropdown-item" onclick="route('builds/sinx')">🗡️ SinX</button></li>
+                <li><button class="dropdown-item" onclick="route('builds/professor')">📖 Professor</button></li>
             </ul>
-          </li>
-          <li><button class="nav-link" onclick="navigate('guides')">Guides</button></li>
-          <li><a href="/admin/" id="admin-btn">Dashboard</a></li>
-          <li><div data-netlify-identity-menu></div></li>
-        </ul>
-      </nav>
-    </header>
+        </li>
 
-    <main class="content-card" id="view"></main>
-  </div>
+        <li class="dropdown">
+            <button class="nav-link">Guides ▼</button>
+            <ul class="dropdown-menu">
+                <li><button class="dropdown-item" onclick="route('guides/leveling')">📜 Leveling Guide</button></li>
+                <li><button class="dropdown-item" onclick="route('guides/farming')">💰 Zenny Farming</button></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+        </header>
 
-  <script>
-    // --- BUILD DATA ---
-    const data = {
-      sinx: {
-        title: "Assassin Cross",
-        builds: {
-          crit: { name: "Sonic Blow", desc: "High burst damage with EDP." },
-          sbk: { name: "Soul Destroyer", desc: "INT/STR hybrid ranged build." }
+        <main class="content-card">
+            <div id="loader" class="loading-overlay">Casting Warp Portal...</div>
+            <div id="content-area" class="dynamic-html-content">
+                <h1>Finest Archives</h1>
+                <p>Welcome to the ultimate repository for Ragnarok Online excellence.</p>
+                <p>Select a scroll from the menu above to load expert class builds or strategy guides without leaving the page.</p>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        /**
+         * Simple Router: Fetches HTML files from your GitHub folders
+         * and injects them into the #content-area
+         */
+        async function route(path) {
+            const area = document.getElementById('content-area');
+            const loader = document.getElementById('loader');
+
+            if (path === 'home') {
+                area.style.display = 'block';
+                area.innerHTML = `<h1>Finest Archives</h1><p>Welcome to the ultimate repository for Ragnarok Online excellence.</p><p>Select a scroll from the menu above to load expert class builds.</p>`;
+                return;
+            }
+
+            // Show Loading UI
+            area.style.display = 'none';
+            loader.style.display = 'block';
+
+            try {
+                // Fetch the HTML file from the /content/ folder
+                const response = await fetch(`./content/${path}.html`);
+                
+                if (!response.ok) throw new Error('Portal failed to open.');
+
+                const htmlContent = await response.text();
+                
+                // Success: Inject content
+                area.innerHTML = htmlContent;
+                loader.style.display = 'none';
+                area.style.display = 'block';
+                
+            } catch (error) {
+                // Error: File not found or network issue
+                area.innerHTML = `<h1>Connection Lost</h1><p>The scroll at <strong>content/${path}.html</strong> could not be found in the archives.</p>`;
+                loader.style.display = 'none';
+                area.style.display = 'block';
+            }
         }
-      },
-      professor: {
-        title: "Professor",
-        builds: {
-          bolter: { name: "Double Bolter", desc: "Elemental magic specialist." },
-          support: { name: "Support Wall", desc: "Land Protector and Dispel bot." }
-        }
-      }
-    };
-
-    const view = document.getElementById('view');
-
-    function navigate(page) {
-      if (page === 'home') {
-        view.innerHTML = `<h1 class="page-title">Welcome to Finest</h1><p>Select Builds for class stats or Guides for general gameplay tips.</p>`;
-      } 
-      else if (page === 'guides') {
-        view.innerHTML = `<h1 class="page-title">Gameplay Guides</h1><div id="guides-list">Loading dynamic guides...</div>`;
-        // In a real setup, you'd fetch() the HTML files from your /content/guides/ folder here
-      }
-      else if (data[page]) {
-        renderBuildPage(page);
-      }
-    }
-
-    function renderBuildPage(key) {
-      const info = data[key];
-      const tabs = Object.keys(info.builds).map(k => `<button class="tab-btn" onclick="showBuild('${key}', '${k}')">${info.builds[k].name}</button>`).join('');
-      view.innerHTML = `<h1 class="page-title">${info.title} Builds</h1><div class="tabs-container">${tabs}</div><div id="build-desc">Select a build tab.</div>`;
-    }
-
-    window.showBuild = (pageKey, buildKey) => {
-      document.getElementById('build-desc').innerHTML = `<div style="padding:20px; background:rgba(0,0,0,0.3); border-radius:10px;">${data[pageKey].builds[buildKey].desc}</div>`;
-    };
-
-    // --- IDENTITY / DASHBOARD VISIBILITY ---
-    netlifyIdentity.on("init", user => { if(user) document.getElementById('admin-btn').style.display = 'inline-block'; });
-    netlifyIdentity.on("login", user => { location.reload(); });
-    
-    navigate('home');
-  </script>
+    </script>
 </body>
 </html>

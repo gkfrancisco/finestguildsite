@@ -2,7 +2,10 @@ backend:
   name: git-gateway
   branch: main
 
-# Ensure these folders exist in your GitHub (even if empty)
+# This disables the visual preview which causes the r.slice crash
+publish_mode: simple
+show_preview_links: false
+
 media_folder: "assets/images"
 public_folder: "/assets/images"
 
@@ -11,24 +14,14 @@ collections:
     label: "Class Builds"
     folder: "content/builds"
     create: true
-    # The 'r.slice' error often happens because 'identifier_field' is missing 
-    # or the slug can't be generated.
-    identifier_field: title 
-    slug: "{{title}}"
+    editor:
+      preview: false # This is the "kill switch" for the r.slice error
     extension: "html"
-    format: "frontmatter"
+    format: "yaml-frontmatter"
+    slug: "{{slug}}"
     fields:
-      - { label: "Class Name", name: "title", widget: "string" }
-      - { label: "Build Details", name: "body", widget: "code", default_language: "html", output_code_only: false }
-
-  - name: "guides"
-    label: "General Guides"
-    folder: "content/guides"
-    create: true
-    identifier_field: title
-    slug: "{{title}}"
-    extension: "html"
-    format: "frontmatter"
-    fields:
-      - { label: "Guide Title", name: "title", widget: "string" }
-      - { label: "Guide Content", name: "body", widget: "code", default_language: "html", output_code_only: false }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Content", name: "body", widget: "markdown" } 
+      # Note: I changed 'code' to 'markdown'. 
+      # You can still paste HTML into the Markdown "Raw" tab, 
+      # but Markdown is much more stable in this CMS.

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Finest · Ragnarok Builds</title>
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #0b0e14;
+      background-image: radial-gradient(circle at 20% 10%, #1e2a32 1px, transparent 1px), radial-gradient(circle at 80% 60%, #2a1e2e 1px, transparent 1px);
+      background-size: 60px 60px, 90px 90px;
+      background-color: #0c0f15;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: #e0e4e9;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      line-height: 1.5;
+    }
+    .site-container { max-width: 1300px; margin: 0 auto; padding: 1.5rem 2rem; width: 100%; flex: 1; display: flex; flex-direction: column; }
+    .main-header {
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+      padding: 0.8rem 2rem; margin-bottom: 2.5rem; background: rgba(8, 10, 15, 0.7);
+      backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+      border-radius: 2.5rem; box-shadow: 0 10px 25px -8px rgba(0,0,0,0.7), 0 0 0 1px rgba(200, 160, 80, 0.15);
+      z-index: 10; position: relative; border-bottom: 2px solid #4a3a2c;
+    }
+    .logo-area { display: flex; align-items: baseline; gap: 0.2rem; }
+    .site-title { font-family: 'Cinzel Decorative', cursive; font-size: 2.4rem; font-weight: 700; color: #f5e6d3; text-shadow: 0 0 12px #b87c3a; letter-spacing: 3px; }
+    .site-sub { font-size: 0.9rem; color: #b49b7b; margin-left: 0.5rem; letter-spacing: 1px; }
+    .nav-list { display: flex; list-style: none; gap: 1.5rem; align-items: center; }
+    .nav-link { 
+      text-decoration: none; font-weight: 500; color: #cfc3b0; background: none; border: none; 
+      cursor: pointer; font-family: inherit; font-size: 1.1rem; transition: 0.25s; border-bottom: 2px solid transparent;
+    }
+    .nav-link:hover { color: #f7d9a0; border-bottom-color: #c99a4b; }
+    .dropdown { position: relative; }
+    .dropdown-menu {
+      position: absolute; top: calc(100% + 12px); left: 0; background: #1a1e26;
+      border: 1px solid #5e4a34; border-radius: 18px; padding: 0.6rem 0; min-width: 190px;
+      list-style: none; opacity: 0; visibility: hidden; transform: translateY(8px); transition: 0.25s;
+    }
+    .dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+    .dropdown-link {
+      text-decoration: none; color: #d9cdb0; display: block; padding: 0.6rem 1.5rem;
+      background: none; border: none; width: 100%; text-align: left; font-family: inherit; cursor: pointer;
+    }
+    .dropdown-link:hover { background: rgba(200, 140, 50, 0.15); color: #ffd78b; }
+    .content-card {
+      background: rgba(18, 22, 28, 0.8); backdrop-filter: blur(16px); border: 1px solid #4f3d2b;
+      border-radius: 2.5rem; padding: 2.5rem 2.8rem; flex: 1;
+    }
+    .page-title { font-family: 'Cinzel Decorative', cursive; font-size: 2.2rem; color: #ecd59b; margin-bottom: 1.2rem; border-left: 6px solid #b3823e; padding-left: 1.5rem; }
+    .placeholder-note { background: rgba(200, 155, 60, 0.08); border: 1px dashed #8b774f; border-radius: 20px; padding: 1.5rem; margin-top: 1.5rem; color: #cfbc93; }
+    .footer-note { margin-top: 2.5rem; text-align: center; font-size: 0.85rem; color: #6b6254; padding: 1.8rem; border-top: 1px solid #362f24; }
+    
+    /* Tabs */
+    .tabs-container { display: flex; gap: 0.5rem; margin: 1.5rem 0; border-bottom: 2px solid #4a3a2c; padding-bottom: 0.8rem; }
+    .tab-button { background: rgba(30, 25, 20, 0.6); border: 1px solid #5e4a34; color: #c4b69c; padding: 0.7rem 1.5rem; border-radius: 2rem; cursor: pointer; }
+    .tab-button.active { background: #b3823e; color: #0b0e14; font-weight: 600; }
+    .tab-content { background: rgba(0,0,0,0.4); padding: 1.8rem; border-radius: 1.5rem; border: 1px solid #5e4a34; }
+    
+    /* Login Button Styling */
+    #admin-nav-item { display: none; } /* Hidden until login */
+    .login-box { margin-left: 1rem; border-left: 1px solid #4a3a2c; padding-left: 1rem; }
+  </style>
+</head>
+<body>
+  <div class="site-container">
+    <header class="main-header">
+      <div class="logo-area"><span class="site-title">FINEST</span><span class="site-sub">· rune midgard ·</span></div>
+      <nav class="main-nav">
+        <ul class="nav-list">
+          <li><button class="nav-link" data-page="home">🏠 Home</button></li>
+          <li class="dropdown">
+            <button class="nav-link">⚔️ Builds ▼</button>
+            <ul class="dropdown-menu">
+              <li><button class="dropdown-link" data-page="sinx">🗡️ SinX</button></li>
+              <li><button class="dropdown-link" data-page="professor">📖 Professor</button></li>
+            </ul>
+          </li>
+          <li id="admin-nav-item"><a href="/admin/" class="nav-link">🛠️ Admin</a></li>
+          <li class="login-box"><div data-netlify-identity-menu></div></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="content-card" id="mainContent"></main>
+    <div class="footer-note">© Finest · Rune-Midgard echoes · dark mode eternal</div>
+  </div>
+
+  <script>
+    (function() {
+      // --- BUILD DATA ---
+      const sinxBuilds = {
+        crit: { name: "Crit Katar", icon: "🗡️", stats: { STR: "99", AGI: "99", LUK: "60" }, desc: "High ASPD critical damage.", gear: "Infiltrator, Jur [3]" },
+        sbk: { name: "Sonic Blow", icon: "💨", stats: { STR: "110", DEX: "60" }, desc: "Burst damage specialist.", gear: "Elemental Jurs" }
+      };
+      const profBuilds = {
+        bolter: { name: "Bolter", icon: "⚡", stats: { INT: "120", DEX: "90" }, desc: "Double Casting specialist.", gear: "Survivor's Rod" }
+      };
+
+      // --- PAGE RENDERER ---
+      const pages = {
+        home: `<h1 class="page-title">⚡ Finest Arsenal</h1><p>Welcome to the sanctuary of elite builds.</p>`,
+        sinx: renderClass('SinX', '🗡️', sinxBuilds),
+        professor: renderClass('Professor', '📖', profBuilds)
+      };
+
+      function renderClass(name, icon, builds) {
+        const tabs = Object.keys(builds).map((k, i) => `<button class="tab-button ${i==0?'active':''}" data-tab="${k}">${builds[k].name}</button>`).join('');
+        return `<h1 class="page-title">${icon} ${name}</h1><div class="tabs-container">${tabs}</div><div id="tab-output">Select a build above.</div>`;
+      }
+
+      const main = document.getElementById('mainContent');
+      function navigate(p) {
+        main.innerHTML = pages[p] || pages.home;
+        setupListeners();
+      }
+
+      function setupListeners() {
+        document.querySelectorAll('[data-page]').forEach(b => b.onclick = () => navigate(b.dataset.page));
+        document.querySelectorAll('[data-tab]').forEach(b => b.onclick = (e) => {
+          const classType = document.querySelector('.page-title').innerText.includes('SinX') ? sinxBuilds : profBuilds;
+          const data = classType[b.dataset.tab];
+          document.getElementById('tab-output').innerHTML = `<div class="tab-content"><h3>${data.name}</h3><p>${data.desc}</p><p><strong>Gear:</strong> ${data.gear}</p></div>`;
+          document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+          e.target.classList.add('active');
+        });
+      }
+
+      // --- IDENTITY LOGIC ---
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (user) document.getElementById('admin-nav-item').style.display = 'block';
+        });
+        window.netlifyIdentity.on("login", () => {
+          document.getElementById('admin-nav-item').style.display = 'block';
+        });
+        window.netlifyIdentity.on("logout", () => {
+          document.getElementById('admin-nav-item').style.display = 'none';
+        });
+      }
+
+      navigate('home');
+    })();
+  </script>
+</body>
+</html>

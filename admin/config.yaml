@@ -1,0 +1,16 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "assets/images"
+public_folder: "/assets/images"
+
+collections:
+  - name: "guides"
+    label: "Guides"
+    folder: "content/guides"
+    create: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Class", name: "class", widget: "select", options: ["SinX", "Professor"] }
+      - { label: "Build Content (HTML)", name: "body", widget: "code", default_language: "html" }

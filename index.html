@@ -56,7 +56,7 @@
       position: relative;
     }
 
-    .logo-area { display: flex; align-items: baseline; gap: 0.2rem; }
+    .logo-area { display: flex; align-items: baseline; gap: 0.2rem; flex-direction: row-reverse; align-items: center;}
 
     .site-title {
       font-family: 'Cinzel Decorative', cursive;
@@ -66,6 +66,10 @@
       text-shadow: 0 0 12px #b87c3a, 0 0 25px #5e3a1c;
       letter-spacing: 3px;
       line-height: 1;
+    }
+
+    .finest-logo img {
+      max-width: 80px;
     }
 
     .main-nav { display: flex; align-items: center; gap: 2rem; }
@@ -254,6 +258,8 @@
       border: none;
       cursor: pointer;
       font-family: inherit;
+      font-size: 18px;
+      font-weight: bold;
     }
 
     .class-icon { font-size: 4rem; text-align: center; margin-bottom: 1rem; }
@@ -268,7 +274,8 @@
   <div class="site-container">
     <header class="main-header">
       <div class="logo-area">
-        <span class="site-title">FINEST</span>
+        
+        <span class="finest-logo"><img src="img/finest-logo.png"></span>
       </div>
       <nav class="main-nav">
         <ul class="nav-list">
@@ -298,7 +305,7 @@
     (function() {
       // --- Page Templates ---
       const homeHTML = `
-        <h1 class="page-title">⚡ Finest</h1>
+        <h1 class="page-title">⚡ Finest Shared Builds</h1>
         <p style="font-size: 1.2rem; color: #c2b9a6; margin-bottom: 2rem;">Welcome to the archive of builds.</p>
         <div style="display: flex; gap: 2rem; flex-wrap: wrap;">
           <div style="flex: 1; min-width: 250px; background: rgba(0,0,0,0.2); padding: 1.5rem; border-radius: 20px; border: 1px solid #362f24;">

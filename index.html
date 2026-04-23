@@ -39,30 +39,24 @@
       flex-direction: column;
     }
 
-    /* Header with z-index: 1 */
+    /* Header */
     .main-header {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
       border-bottom: 2px solid #4a3a2c;
-      padding-bottom: 1.2rem;
+      padding: 0.8rem 2rem;
       margin-bottom: 2.5rem;
       background: rgba(8, 10, 15, 0.7);
       backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
       border-radius: 2.5rem;
-      padding: 0.8rem 2rem;
       box-shadow: 0 10px 25px -8px rgba(0,0,0,0.7), 0 0 0 1px rgba(200, 160, 80, 0.15);
-      z-index: 1;
+      z-index: 100;
       position: relative;
     }
 
-    .logo-area {
-      display: flex;
-      align-items: baseline;
-      gap: 0.2rem;
-    }
+    .logo-area { display: flex; align-items: baseline; gap: 0.2rem; }
 
     .site-title {
       font-family: 'Cinzel Decorative', cursive;
@@ -74,31 +68,8 @@
       line-height: 1;
     }
 
-    .site-sub {
-      font-size: 0.9rem;
-      color: #b49b7b;
-      margin-left: 0.5rem;
-      font-weight: 400;
-      letter-spacing: 1px;
-    }
-
-    .main-nav {
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-    }
-
-    .nav-list {
-      display: flex;
-      list-style: none;
-      gap: 2rem;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    .nav-item {
-      position: relative;
-    }
+    .main-nav { display: flex; align-items: center; gap: 2rem; }
+    .nav-list { display: flex; list-style: none; gap: 2rem; align-items: center; flex-wrap: wrap; }
 
     .nav-link {
       text-decoration: none;
@@ -110,20 +81,11 @@
       display: flex;
       align-items: center;
       gap: 0.3rem;
-      border-bottom: 2px solid transparent;
-      letter-spacing: 0.4px;
-      cursor: pointer;
+      border: none;
       background: none;
-      border-top: none;
-      border-left: none;
-      border-right: none;
+      cursor: pointer;
       font-family: inherit;
-    }
-
-    .nav-link i {
-      font-style: normal;
-      font-size: 0.9rem;
-      opacity: 0.8;
+      border-bottom: 2px solid transparent;
     }
 
     .nav-link:hover {
@@ -132,179 +94,173 @@
       border-bottom-color: #c99a4b;
     }
 
-    .dropdown {
-      position: relative;
-    }
-
+    /* Dropdown */
+    .dropdown { position: relative; }
     .dropdown-menu {
       position: absolute;
       top: calc(100% + 12px);
       left: 0;
-      background: #1a1e26;
       background: linear-gradient(145deg, #1b1f2a 0%, #12161d 100%);
       border: 1px solid #5e4a34;
       border-radius: 18px;
       padding: 0.6rem 0;
       min-width: 190px;
       list-style: none;
-      box-shadow: 0 20px 30px -10px rgba(0,0,0,0.8), 0 0 0 1px rgba(190, 140, 60, 0.4);
+      box-shadow: 0 20px 30px -10px rgba(0,0,0,0.8);
       opacity: 0;
       visibility: hidden;
       transform: translateY(8px);
       transition: all 0.25s cubic-bezier(0.2, 0.9, 0.4, 1);
-      z-index: 10;
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      z-index: 101;
     }
 
-    .dropdown:hover .dropdown-menu,
-    .dropdown:focus-within .dropdown-menu {
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(0);
-    }
-
-    .dropdown-item {
-      padding: 0.5rem 1.5rem;
-    }
+    .dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
 
     .dropdown-link {
-      text-decoration: none;
       color: #d9cdb0;
-      font-weight: 500;
+      padding: 0.6rem 1.5rem;
       display: flex;
       align-items: center;
       gap: 0.6rem;
-      font-size: 1rem;
-      transition: 0.2s;
-      padding: 0.4rem 0.2rem;
-      border-radius: 8px;
-      cursor: pointer;
+      text-decoration: none;
       background: none;
       border: none;
       width: 100%;
       text-align: left;
+      cursor: pointer;
       font-family: inherit;
     }
 
-    .dropdown-link:hover {
-      color: #ffd78b;
-      background: rgba(200, 140, 50, 0.15);
-      text-shadow: 0 0 6px #b87c3a;
-    }
+    .dropdown-link:hover { background: rgba(200, 140, 50, 0.15); color: #ffd78b; }
 
-    .rune-icon {
-      font-size: 1.1rem;
-      filter: drop-shadow(0 0 4px #b8863c);
-    }
-
+    /* Content Card */
     .content-card {
       background: rgba(18, 22, 28, 0.8);
       backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
       border: 1px solid #4f3d2b;
       border-radius: 2.5rem;
       padding: 2.5rem 2.8rem;
-      box-shadow: 0 25px 45px -12px rgba(0,0,0,0.9), inset 0 1px 0 rgba(230, 200, 140, 0.2);
+      box-shadow: 0 25px 45px -12px rgba(0,0,0,0.9);
       flex: 1;
-      transition: all 0.3s;
     }
 
     .page-title {
       font-family: 'Cinzel Decorative', cursive;
       font-size: 2.2rem;
-      font-weight: 700;
       color: #ecd59b;
       margin-bottom: 1.2rem;
       border-left: 6px solid #b3823e;
       padding-left: 1.5rem;
-      text-shadow: 0 0 15px #3f2e1c;
     }
 
-    .welcome-text {
+    /* Tabs Logic */
+    .tabs-container { margin-top: 1.5rem; }
+    .tabs-header { display: flex; gap: 8px; margin-bottom: -1px; overflow-x: auto; }
+    
+    .tab-btn {
+      background: rgba(20, 25, 35, 0.9);
+      border: 1px solid #4f3d2b;
+      border-bottom: none;
+      color: #b49b7b;
+      padding: 12px 25px;
+      border-radius: 15px 15px 0 0;
+      cursor: pointer;
+      font-family: 'Cinzel Decorative', cursive;
+      font-size: 0.85rem;
+      transition: 0.3s;
+      white-space: nowrap;
+    }
+
+    .tab-btn.active {
+      background: rgba(18, 22, 28, 1);
+      color: #f3cd81;
+      border-color: #8b774f;
+      border-bottom: 2px solid #12161c;
+      position: relative;
+      z-index: 2;
+    }
+
+    .tab-content {
+      display: none;
+      background: rgba(12, 15, 21, 0.4);
+      border: 1px solid #8b774f;
+      border-radius: 0 25px 25px 25px;
+      padding: 2rem;
+      animation: fadeInTab 0.4s ease forwards;
+    }
+
+    .tab-content.active { display: block; }
+
+    @keyframes fadeInTab {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Build Styles */
+    .build-sub-title {
+      color: #dbb45c;
+      font-family: 'Cinzel Decorative', cursive;
       font-size: 1.2rem;
-      color: #c2b9a6;
-      margin-bottom: 2rem;
-      max-width: 700px;
+      margin: 1.5rem 0 1rem 0;
+    }
+
+    .stat-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 10px;
+      background: rgba(0,0,0,0.3);
+      padding: 15px;
+      border-radius: 12px;
+      border: 1px solid rgba(139, 119, 79, 0.2);
+      margin-bottom: 1rem;
+    }
+
+    .stat-list li b { color: #f3cd81; }
+
+    .card-list {
+      list-style: none;
+      background: rgba(0,0,0,0.2);
+      padding: 15px;
+      border-radius: 12px;
+    }
+
+    .card-list li { margin-bottom: 8px; color: #c2b9a6; }
+    .card-list b { color: #dbb45c; }
+
+    .skillb-img { margin-top: 15px; }
+    .skillb-img img {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 12px;
+      border: 1px solid #4a3a2c;
     }
 
     .placeholder-note {
       background: rgba(200, 155, 60, 0.08);
       border: 1px dashed #8b774f;
       border-radius: 20px;
-      padding: 1.5rem 2rem;
+      padding: 1.5rem;
       margin-top: 1.5rem;
       color: #cfbc93;
-      font-style: italic;
-    }
-
-    .placeholder-note strong {
-      color: #f3cd81;
-      font-weight: 600;
-    }
-
-    .footer-note {
-      margin-top: 2.5rem;
-      text-align: center;
-      font-size: 0.85rem;
-      color: #6b6254;
-      border-top: 1px solid #362f24;
-      padding-top: 1.8rem;
-    }
-
-    /* Class page styles (used when content is swapped) */
-    .class-icon {
-      font-size: 4rem;
-      filter: drop-shadow(0 0 15px #b8863c);
-      margin-bottom: 0.5rem;
-      text-align: center;
-    }
-
-    .desc-box {
-      background: rgba(0,0,0,0.4);
-      border-radius: 1.5rem;
-      padding: 1.8rem;
-      margin: 1.8rem 0;
-      border: 1px solid #5e4a34;
-      color: #cfc3a8;
     }
 
     .back-link {
       display: inline-block;
-      margin-top: 1.5rem;
+      margin-top: 2rem;
       color: #f5d7a0;
-      text-decoration: none;
-      font-weight: 600;
-      border-bottom: 1px solid #b3823e;
-      padding-bottom: 2px;
-      transition: 0.2s;
-      cursor: pointer;
+      text-decoration: underline;
       background: none;
-      border-top: none;
-      border-left: none;
-      border-right: none;
+      border: none;
+      cursor: pointer;
       font-family: inherit;
-      font-size: 1rem;
     }
 
-    .back-link:hover { color: #ffdfaa; }
-
-    a {
-      text-decoration: none;
-    }
+    .class-icon { font-size: 4rem; text-align: center; margin-bottom: 1rem; }
 
     @media (max-width: 700px) {
-      .main-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
-      }
-      .nav-list {
-        gap: 1rem;
-      }
-      .content-card {
-        padding: 1.8rem;
-      }
+      .main-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+      .content-card { padding: 1.5rem; }
     }
   </style>
 </head>
@@ -313,165 +269,204 @@
     <header class="main-header">
       <div class="logo-area">
         <span class="site-title">FINEST</span>
-        
       </div>
-      <nav class="main-nav" aria-label="Main navigation">
+      <nav class="main-nav">
         <ul class="nav-list">
-          <li class="nav-item">
-            <button class="nav-link" data-page="home">🏠 Home</button>
-          </li>
-          <li class="nav-item dropdown">
-            <button class="nav-link" aria-haspopup="true" aria-expanded="false">
-              ⚔️ Builds <span style="font-size:0.7rem; margin-left:2px;">▼</span>
-            </button>
+          <li><button class="nav-link" data-page="home">🏠 Home</button></li>
+          <li class="dropdown">
+            <button class="nav-link">⚔️ Builds <span style="font-size:0.7rem;">▼</span></button>
             <ul class="dropdown-menu">
-              <li class="dropdown-item">
-                <button class="dropdown-link" data-page="sinx">
-                  <span class="rune-icon">🗡️</span> SinX
-                </button>
-              </li>
-              <li class="dropdown-item">
-                <button class="dropdown-link" data-page="professor">
-                  <span class="rune-icon">📖</span> Professor
-                </button>
-              </li>
+              <li><button class="dropdown-link" data-page="sinx">🗡️ SinX</button></li>
+              <li><button class="dropdown-link" data-page="professor">📖 Professor</button></li>
             </ul>
           </li>
-          <li class="nav-item">
-            <button class="nav-link" data-page="guides">📜 Guides</button>
-          </li>
-          <li class="nav-item">
-            <button class="nav-link" data-page="about">🌙 About</button>
-          </li>
+          <li><button class="nav-link" data-page="guides">📜 Guides</button></li>
+          <li><button class="nav-link" data-page="about">🌙 About</button></li>
         </ul>
       </nav>
     </header>
 
     <main class="content-card" id="mainContent">
-      <!-- Dynamic content will be injected here -->
-    </main>
-    <div class="footer-note">
-      © Finest · 
+      </main>
+
+    <div style="text-align:center; padding: 2rem; color: #6b6254; font-size: 0.85rem;">
+      © Finest · 2026
     </div>
   </div>
 
   <script>
     (function() {
-      // --- Page templates ---
+      // --- Page Templates ---
       const homeHTML = `
         <h1 class="page-title">⚡ Finest</h1>
-        <p class="welcome-text">
-          Welcome to <strong>Finest</strong>
-        </p>
-        <div style="display: flex; gap: 2rem; flex-wrap: wrap; margin-top: 1.8rem;">
-          <div style="flex: 1; min-width: 200px;">
-            <h3 style="color: #dbb45c; font-family: 'Cinzel Decorative', cursive; margin-bottom: 0.7rem;">🗡️ SinX</h3>
-            <p style="color: #b9aa8f;">Assassin Cross specialist. Crit, SBK, or Soul Destroyer builds.</p>
-            <button class="back-link" data-page="sinx" style="color: #f5c27b; text-decoration: underline; font-weight: 500; background:none; border:none; cursor:pointer; padding:0; font-family:inherit;">Open SinX page →</button>
+        <p style="font-size: 1.2rem; color: #c2b9a6; margin-bottom: 2rem;">Welcome to the archive of builds.</p>
+        <div style="display: flex; gap: 2rem; flex-wrap: wrap;">
+          <div style="flex: 1; min-width: 250px; background: rgba(0,0,0,0.2); padding: 1.5rem; border-radius: 20px; border: 1px solid #362f24;">
+            <h3 style="color: #dbb45c; font-family: 'Cinzel Decorative', cursive;">🗡️ SinX</h3>
+            <p style="color: #b9aa8f; margin: 10px 0;">Critical, SBK, or Soul Destroyer specialists.</p>
+            <button class="back-link" data-page="sinx">Explore Build →</button>
           </div>
-          <div style="flex: 1; min-width: 200px;">
-            <h3 style="color: #dbb45c; font-family: 'Cinzel Decorative', cursive; margin-bottom: 0.7rem;">📖 Professor</h3>
-            <p style="color: #b9aa8f;">Sage evolution. Bolts, double casting, and support magic.</p>
-            <button class="back-link" data-page="professor" style="color: #f5c27b; text-decoration: underline; font-weight: 500; background:none; border:none; cursor:pointer; padding:0; font-family:inherit;">Open Professor page →</button>
+          <div style="flex: 1; min-width: 250px; background: rgba(0,0,0,0.2); padding: 1.5rem; border-radius: 20px; border: 1px solid #362f24;">
+            <h3 style="color: #dbb45c; font-family: 'Cinzel Decorative', cursive;">📖 Professor</h3>
+            <p style="color: #b9aa8f; margin: 10px 0;">Control the elements and dominate the battlefield.</p>
+            <button class="back-link" data-page="professor">Explore Build →</button>
           </div>
-        </div>
-        <div class="placeholder-note">
-          ⚡ <strong>SinX</strong> and <strong>Professor</strong> pages are ready. Click on them in the menu or below.
         </div>
       `;
 
       const sinxHTML = `
         <div class="class-icon">🗡️</div>
-        <h1 class="page-title" style="border-left-color: #b3823e;">SinX</h1>
-        <p style="color: #b49b7b; margin-bottom: 2rem; font-size: 1.1rem; text-align: center;">Assassin Cross · Guillotine Cross</p>
-        <div class="desc-box">
-          <p><strong>SinX (Assassin Cross)</strong> thrives in critical strikes and deadly poison.</p>
-          <p>• <span style="color:#f3cd81;">Crit Build:</span> High AGI/LUK, Katar mastery.<br>
-          • <span style="color:#f3cd81;">Soul Destroyer:</span> Hybrid INT/STR for burst.<br>
-          • <span style="color:#f3cd81;">SBK Build:</span> Sonic Blow specialist.</p>
-          <p style="margin-top:1rem;">Darkness thrives in the shadows of Finest.</p>
-        </div>
-        <div class="placeholder-note">
-          ⚡ You can replace this content with your own SinX HTML later.
-        </div>
-        <button class="back-link" data-page="home">← Return to Finest</button>
+        <h1 class="page-title">Assassin Cross</h1>
+        <div class="placeholder-note">SinX detailed guides are being drafted. Stay in the shadows.</div>
+        <button class="back-link" data-page="home">← Return Home</button>
       `;
 
       const professorHTML = `
         <div class="class-icon">📖</div>
-        <h1 class="page-title" style="border-left-color: #b3823e;">Professor</h1>
-        <p style="color: #b49b7b; margin-bottom: 2rem; font-size: 1.1rem; text-align: center;">Professor · Sorcerer</p>
-        <div class="desc-box">
-          <p><strong>Professor</strong> controls elements and disrupts magic.</p>
-          <p>• <span style="color:#f3cd81;">Bolter:</span> Double Casting with high INT/DEX.<br>
-          • <span style="color:#f3cd81;">Support:</span> Land Protector, Dispel, Spider Web.<br>
-          • <span style="color:#f3cd81;">Spell Fist:</span> Unique melee-magic hybrid.</p>
-          <p style="margin-top:1rem;">Knowledge is the ultimate weapon in Rune-Midgard.</p>
+        <h1 class="page-title">Professor</h1>
+        <p style="color: #b49b7b; margin-bottom: 2rem; font-size: 1.1rem; text-align: center;"></p>
+
+        <div class="tabs-container">
+          <div class="tabs-header">
+            <button class="tab-btn active" onclick="openTab(event, 'psychicTab')">🌀 Psychic Wave Build</button>
+            <button class="tab-btn" onclick="openTab(event, 'bolterTab')">⚡ Bolter Build</button>
+          </div>
+
+          <div id="psychicTab" class="tab-content active">
+            <h3 class="build-sub-title">📊 Stat Build (PVE)</h3>
+            <ul class="stat-list">
+              <li><b>STR:</b> 0</li><li><b>AGI:</b> 0</li><li><b>VIT:</b> 0</li>
+              <li><b>INT:</b> 99</li><li><b>DEX:</b> 2</li><li><b>LUK:</b> 99</li>
+            </ul>
+
+            <h3 class="build-sub-title">📊 Stat Build (PVP)</h3>
+            <ul class="stat-list">
+              <li><b>STR:</b> 0</li><li><b>AGI:</b> 0</li><li><b>VIT:</b> 72</li>
+              <li><b>INT:</b> 99</li><li><b>DEX:</b> 0</li><li><b>LUK:</b> 57</li>
+            </ul>
+
+            <h3 class="build-sub-title">🌀 Divine Armament for PSYCHIC WAVE</h3>
+            <ul class="card-list">
+              <li><b>Intellect Tablet</b></li>
+            </ul>
+
+            <h3 class="build-sub-title">🌀 Enchants</h3>
+            <ul class="card-list">
+              <li><b>Magic Boon</b></li>
+              <li><b>Superior MATK</b></li>
+              <li><b>Counter Crit</b></li>
+            </ul>
+
+            <h3 class="build-sub-title">🃏 Card Setup</h3>
+            <ul class="card-list">
+              <li><b>Weapon:</b> Hydra, Skeleton Worker</li>
+              <li><b>Shield:</b> 2x Thara Frog</li>
+              <li><b>Armor:</b> Sasquatch or Creamy Fear</li>
+              <li><b>Mantle:</b> Dustiness, Jakk or Marse (Resist)</li>
+              <li><b>Shoes:</b> Moonlight Flower (MVP) & Illu (or Verit)</li>
+              <li><b>Accessory:</b> 2x Wraith / 2 Greatest General | 1 Horong</li>
+              <li><b>Headwear:</b> 2 Cramp / 2 Pharaoh Illu (or mixed)</li>
+              <li><b>Costume/Back:</b> Deviling / Baphomet / GTB Puppet II</li>
+            </ul>
+
+            <h3 class="build-sub-title">📜 Skill Build</h3>
+            <div class="skillb-img"><img src="img/psych-sk1.png" /></div>
+            <div class="skillb-img"><img src="img/psych-sk2.png" /></div>
+            <div class="skillb-img"><img src="img/psych-sk3.png" /></div>
+
+            <div class="placeholder-note">
+              <strong>Manual Skills:</strong> Psychic Wave, Energy Coat, Sight, Land Protector.<br><br>
+              <span style="color:#f3cd81;">💡 Auto Skills:</span> AUTO Psychic Wave is fine for PVE, but manual control is vital for PVP survival.
+            </div>
+          </div>
+
+          <div id="bolterTab" class="tab-content">
+            <h3 class="build-sub-title">📊 Stat Build (PVE)</h3>
+            <ul class="stat-list">
+              <li><b>STR:</b> 0</li><li><b>AGI:</b> 0</li><li><b>VIT:</b> 0</li>
+              <li><b>INT:</b> 99</li><li><b>DEX:</b> 2</li><li><b>LUK:</b> 99</li>
+            </ul>
+
+            <h3 class="build-sub-title">📊 Stat Build (PVP)</h3>
+            <ul class="stat-list">
+              <li><b>STR:</b> 0</li><li><b>AGI:</b> 0</li><li><b>VIT:</b> 72</li>
+              <li><b>INT:</b> 99</li><li><b>DEX:</b> 0</li><li><b>LUK:</b> 57</li>
+            </ul>
+
+            
+            <h3 class="build-sub-title">⚡ Divine Armament for BOLTER Build</h3>
+            <ul class="card-list">
+              <li><b>Element Fountain Magic Book</b></li>
+            </ul>
+
+             <h3 class="build-sub-title">🌀 Enchants</h3>
+            <ul class="card-list">
+              <li><b>Magic Boon</b></li>
+              <li><b>Superior MATK</b></li>
+              <li><b>Counter Crit</b></li>
+            </ul>
+
+           <h3 class="build-sub-title">🃏 Card Setup</h3>
+            <ul class="card-list">
+              <li><b>Weapon:</b> Hydra, Skeleton Worker</li>
+              <li><b>Shield:</b> 2x Thara Frog</li>
+              <li><b>Armor:</b> Sasquatch or Creamy Fear</li>
+              <li><b>Mantle:</b> Dustiness, Jakk or Marse (Resist)</li>
+              <li><b>Shoes:</b> Moonlight Flower (MVP) & Illu (or Verit)</li>
+              <li><b>Accessory:</b> 2x Wraith / 2 Greatest General | 1 Horong</li>
+              <li><b>Headwear:</b> 2 Cramp / 2 Pharaoh Illu (or mixed)</li>
+              <li><b>Costume/Back:</b> Deviling / Baphomet / GTB Puppet II</li>
+            </ul>
+
+            <h3 class="build-sub-title">📜 Skill Build</h3>
+            <div class="skillb-img"><img src="img/psych-sk4.png" /></div>
+            <div class="skillb-img"><img src="img/psych-sk5.png" /></div>
+            <div class="skillb-img"><img src="img/psych-sk6.png" /></div>
+
+            <div class="placeholder-note">
+              <strong>Manual Skills:</strong><br>
+              <div class="skillb-img" style="max-width: 220px;"><img src="img/psych-sk7.png" /></div><br>
+
+              <span style="color:#f3cd81;">💡 Auto Skills:</span> Lightning Bolt (Strongest) or Bolt of your choice if countered.
+            </div>
+          </div>
+          </div>
         </div>
-        <div class="placeholder-note">
-          ⚡ You can replace this content with your own Professor HTML later.
-        </div>
-        <button class="back-link" data-page="home">← Return to Finest</button>
+
+        <button class="back-link" data-page="home">← Return Home</button>
       `;
 
-      const guidesHTML = `
-        <h1 class="page-title">📜 Guides</h1>
-        <p class="welcome-text">Comprehensive leveling, equipment, and strategy guides coming soon.</p>
-        <div class="placeholder-note">Guides section under construction. Check back later.</div>
-        <button class="back-link" data-page="home">← Return to Finest</button>
-      `;
-
-      const aboutHTML = `
-        <h1 class="page-title">🌙 About Finest</h1>
-        <p class="welcome-text">A passion project dedicated to the finest Ragnarok Online builds and theorycrafting.</p>
-        <div class="placeholder-note">Dark mode eternal. Rune-Midgard forever.</div>
-        <button class="back-link" data-page="home">← Return to Finest</button>
-      `;
-
-      // Map page names to HTML content
-      const pages = {
-        home: homeHTML,
-        sinx: sinxHTML,
-        professor: professorHTML,
-        guides: guidesHTML,
-        about: aboutHTML
-      };
-
+      const pages = { home: homeHTML, sinx: sinxHTML, professor: professorHTML, guides: `<h1>Guides</h1>`, about: `<h1>About</h1>` };
       const mainContent = document.getElementById('mainContent');
 
-      // Function to render a page
+      // Navigation Logic
       function navigateTo(pageName) {
         if (pages[pageName]) {
           mainContent.innerHTML = pages[pageName];
-          // Re-attach event listeners to any new buttons inside the content
+          window.scrollTo(0, 0);
           attachInternalListeners();
         }
       }
 
-      // Attach click listeners to elements with data-page attribute
       function attachInternalListeners() {
-        document.querySelectorAll('[data-page]').forEach(element => {
-          // Avoid duplicate listeners
-          element.removeEventListener('click', handlePageClick);
-          element.addEventListener('click', handlePageClick);
+        document.querySelectorAll('[data-page]').forEach(el => {
+          el.onclick = (e) => { navigateTo(el.getAttribute('data-page')); };
         });
       }
 
-      function handlePageClick(e) {
-        const page = e.currentTarget.getAttribute('data-page');
-        if (page) {
-          e.preventDefault();
-          navigateTo(page);
-        }
+      // Tab Logic (Globally accessible)
+      window.openTab = function(evt, tabName) {
+        const contents = document.querySelectorAll('.tab-content');
+        contents.forEach(c => c.classList.remove('active'));
+        
+        const buttons = document.querySelectorAll('.tab-btn');
+        buttons.forEach(b => b.classList.remove('active'));
+
+        document.getElementById(tabName).classList.add('active');
+        evt.currentTarget.classList.add('active');
       }
 
-      // Initial page load
       navigateTo('home');
-
-      // Global listener attachment (covers menu and dynamic content)
-      attachInternalListeners();
-
-      // Also ensure dropdown buttons work (they have data-page, so already covered)
     })();
   </script>
 </body>

@@ -318,6 +318,11 @@
             <p style="color: #b9aa8f; margin: 10px 0;">Psychic Wave & Bolter Builds</p>
             <button class="back-link" data-page="professor">Explore Build →</button>
           </div>
+          <div style="flex: 1; min-width: 250px; background: rgba(0,0,0,0.2); padding: 1.5rem; border-radius: 20px; border: 1px solid #362f24;">
+            <h3 style="color: #dbb45c; font-family: 'Cinzel Decorative', cursive;">🧪 Biochemist</h3>
+            <p style="color: #b9aa8f; margin: 10px 0;">Utility Build</p>
+            <button class="back-link" data-page="bio">Explore Build →</button>
+          </div>
         </div>
       `;
 
@@ -465,7 +470,68 @@
         <button class="back-link" data-page="home">← Return Home</button>
       `;
 
-      const pages = { home: homeHTML, sinx: sinxHTML, professor: professorHTML, guides: `<h1>Guides</h1>`, about: `<h1>About</h1>` };
+
+      const bioHTML = `
+        <div class="class-icon">🧪</div>
+        <h1 class="page-title">Biochemist</h1>
+            <h3 class="build-sub-title">📊 Stat Build (PVP)</h3>
+            <ul class="stat-list">
+              <li><b>STR:</b> 0</li><li><b>AGI:</b> 0</li><li><b>VIT:</b> 72</li>
+              <li><b>INT:</b> 99</li><li><b>DEX:</b> 0</li><li><b>LUK:</b> 57</li>
+            </ul>
+
+            
+            <h3 class="build-sub-title">⚡ Divine Armament for BOLTER Build</h3>
+            <ul class="card-list">
+              <li><b>Element Fountain Magic Book</b></li>
+            </ul>
+
+             <h3 class="build-sub-title">🌀 Enchants</h3>
+            <ul class="card-list">
+              <li><b>Magic Boon</b></li>
+              <li><b>Superior MATK</b></li>
+              <li><b>Counter Crit</b></li>
+            </ul>
+
+           <h3 class="build-sub-title">🃏 Card Setup</h3>
+            <ul class="card-list">
+              <li><b>Weapon:</b> Hydra, Skeleton Worker</li>
+              <li><b>Shield:</b> 2x Thara Frog</li>
+              <li><b>Armor:</b> Sasquatch or Creamy Fear</li>
+              <li><b>Mantle:</b> Dustiness, Jakk or Marse (Resist)</li>
+              <li><b>Shoes:</b> Moonlight Flower (MVP) & Illu (or Verit)</li>
+              <li><b>Accessory:</b> 2x Wraith / 2 Greatest General | 1 Horong</li>
+              <li><b>Headwear:</b> 2 Cramp / 2 Pharaoh Illu (or mixed)</li>
+              <li><b>Costume/Back:</b> Deviling / Baphomet / GTB Puppet II</li>
+            </ul>
+
+            <h3 class="build-sub-title">📜 Skill Build</h3>
+            <div class="skillb-img"><img src="img/psych-sk4.png" /></div>
+            <div class="skillb-img"><img src="img/psych-sk5.png" /></div>
+            <div class="skillb-img"><img src="img/psych-sk6.png" /></div>
+
+
+            <h3 class="build-sub-title">🪶 Feathers</h3>
+              <b>ATK:</b>
+                <div class="skillb-img"><img src="img/psych-sk8.png" /></div>
+              <b>DEF:</b>
+                <div class="skillb-img"><img src="img/psych-sk9.png" /></div>
+
+
+            <h3 class="build-sub-title">🎖️ Medals</h3>
+              <b>Focus on Medal of Bravery & Medal of Wisdom</b><br>
+              <b>Optional: Medal of Charm & Medal of Tempest for PDMG/MDMG Reduc</b><br>
+
+            <div class="placeholder-note">
+              <strong>Manual Skills:</strong><br>
+              <div class="skillb-img" style="max-width: 220px;"><img src="img/psych-sk7.png" /></div><br>
+
+              <span style="color:#f3cd81;">💡 Auto Skills:</span> Lightning Bolt (Strongest) or Bolt of your choice if countered.
+            </div>
+        <button class="back-link" data-page="home">← Return Home</button>
+      `;
+
+      const pages = { home: homeHTML, sinx: sinxHTML, professor: professorHTML, bio: bioHTML, guides: `<h1>Guides</h1>`, about: `<h1>About</h1>` };
       const mainContent = document.getElementById('mainContent');
 
       // Navigation Logic
